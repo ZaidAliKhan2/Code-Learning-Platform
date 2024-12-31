@@ -1,0 +1,33 @@
+.intro , .structure, .tags, .diagram{
+    color: #EAEAEA;
+    margin-left: 20px;
+}
+
+.structure {
+    border: 2px solid #00D1FF;
+    border-radius: 1px;
+}
+.structure h2, .tags h2{
+    text-decoration: underline;
+}
+.tags {
+    border: 2px solid #0091B3;
+    border-radius: 1px;
+}
+.diagram {
+    height: 300px;
+    border: 2px solid #0091B3;
+}
+.diagram img{
+height: 200px;
+width: auto;
+object-fit: cover;
+}
+.btn {
+    margin-left: 45%;
+    overflow: hidden;
+}
+.btn a{
+    text-decoration: none;
+    color: #EAEAEA;
+}
