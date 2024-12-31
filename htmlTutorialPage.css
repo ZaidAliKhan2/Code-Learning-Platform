@@ -1,0 +1,26 @@
+
+body {
+    background: linear-gradient(180deg, #121212, #1E1E1E);
+    height: 120vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    overflow-x: hidden;
+    overflow-y: visible;
+}.htmlTutorialContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-top: 20px;
+}
+.htmlTutorialContainer h1{
+    font-size: 70px;
+    color: #EAEAEA;
+}
+.htmlTutorialContainer p{
+    color: #EAEAEA;
+    font-size: 30px;
+    margin-top: 10px;
+}

@@ -1,0 +1,100 @@
+body {
+    color: #333333;
+}
+.dropdown {
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-top: -45px;
+    border: none;
+    cursor: pointer;
+}
+.textContainer {
+    text-align: center;
+}
+.textContainer h4{
+    margin-top: 20px;
+}
+.langContainers {
+    margin-left: 15%;
+    margin-top: 30px;
+}
+
+.Container {
+    height: 250px;
+    width: 500px;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.html {
+    background-color: #eae098;
+}
+.css {
+    background-color: #eab1b8;
+}
+.js {
+    background-color: #8BC3C4;
+}
+.langItem {
+    display: flex;
+}
+.langItem:hover {
+    scale: 1.1;
+}
+.fa-solid {
+    margin-top: 50px;
+}
+.langText {
+    display: inline-block;
+    height: 250px;
+    width: 500px;
+    background-color: #eae098;
+    border-radius: 5%;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 15px;
+}
+.langText p{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.langText button {
+    margin-left: 30%;
+    margin-top: 20px;
+    width: 150px;
+}
+#secondLangText {
+    background-color: #eab1b8;
+}
+#thirdLangText {
+    background-color: #8BC3C4;
+}
+.whatsNextContainer {
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#whatsnextText {
+    background-color: white;
+}
+.whatsNextTextContainer{
+    text-align: center
+}
+.whatsNextTextContainer h2{
+    font-size: 65px;
+}
+.whatsNextTextContainer h3{
+    margin-top: 60px;
+    font-size: 30px;
+}
+#frontendText {
+    background-color: #D9EEE1;
+}
+#BackendText {
+    background-color: #eab1b8;
+}
