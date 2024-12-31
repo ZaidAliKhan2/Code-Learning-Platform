@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Page</title>
+    <link rel="stylesheet" href="exercise.css">
+</head>
+<body>
+    <h1>Exercises</h1>
+
+    <!-- HTML Questions -->
+    <div class="exercise">
+        <h2>HTML Question 1</h2>
+        <p>Create an "h1" tag with the text "Hello World".</p>
+        <textarea id="htmlAnswer1"></textarea>
+        <button onclick="evaluateHTML(1, '<h1>Hello World</h1>')">Submit</button>
+        <p id="htmlFeedback1" class="output"></p>
+    </div>
+    <div class="exercise">
+        <h2>HTML Question 2</h2>
+        <p>Create an ordered list with three items: "HTML", "CSS", and "JavaScript".</p>
+        <textarea id="htmlAnswer2"></textarea>
+        <button onclick="evaluateHTML(2, '<ol><li>HTML</li><li>CSS</li><li>JavaScript</li></ol>')">Submit</button>
+        <p id="htmlFeedback2" class="output"></p>
+    </div>
+    <div class="exercise">
+        <h2>HTML Question 3</h2>
+        <p>write a paragraph saying'I love this website' and make the website word bold using strong tag</p>
+        <textarea id="htmlAnswer3"></textarea>
+        <button onclick="evaluateHTML(3, '<p>I love this <strong>website</strong></p>')">Submit</button>
+        <p id="htmlFeedback3" class="output"></p>
+    </div>
+
+    <!-- CSS Questions -->
+    <div class="exercise">
+        <h2>CSS Question 1</h2>
+        <p>Write CSS to make the text color red.</p>
+        <textarea id="cssAnswer1"></textarea>
+        <button onclick="evaluateCSS(1, 'color: red;')">Submit</button>
+        <p id="cssFeedback1" class="output"></p>
+    </div>
+    <div class="exercise">
+        <h2>CSS Question 2</h2>
+        <p>Write CSS to center-align text.</p>
+        <textarea id="cssAnswer2"></textarea>
+        <button onclick="evaluateCSS(2, 'text-align: center;')">Submit</button>
+        <p id="cssFeedback2" class="output"></p>
+    </div>
+    <div class="exercise">
+        <h2>CSS Question 3</h2>
+        <p>Write CSS to set a background color to blue.</p>
+        <textarea id="cssAnswer3"></textarea>
+        <button onclick="evaluateCSS(3, 'background-color: blue;')">Submit</button>
+        <p id="cssFeedback3" class="output"></p>
+    </div>
+
+    <!-- JavaScript Questions -->
+    <div class="exercise">
+        <h2>JavaScript Question 1</h2>
+        <p>Write JavaScript code to return the sum of 5 + 5.</p>
+        <textarea id="jsAnswer1"></textarea>
+        <button onclick="evaluateJS(1, 10)">Submit</button>
+        <p id="jsFeedback1" class="output"></p>
+    </div>
+    <div class="exercise">
+        <h2>JavaScript Question 2</h2>
+        <p>Write JavaScript code to log "Hello, World!" to the console.</p>
+        <textarea id="jsAnswer2"></textarea>
+        <button onclick="evaluateJS(2, 'Hello, World!')">Submit</button>
+        <p id="jsFeedback2" class="output"></p>
+    </div>
+    <div class="exercise">
+        <h2>JavaScript Question 3</h2>
+        <p>Write JavaScript code to create an alert with the text "Welcome!".</p>
+        <textarea id="jsAnswer3"></textarea>
+        <button onclick="evaluateJS(3, 'Welcome!')">Submit</button>
+        <p id="jsFeedback3" class="output"></p>
+    </div>
+
+    <script>
+        // HTML Evaluation
+        function evaluateHTML(questionNumber, expectedAnswer) {
+            const userAnswer = document.getElementById(`htmlAnswer${questionNumber}`).value.trim();
+            const feedback = document.getElementById(`htmlFeedback${questionNumber}`);
+
+            if (userAnswer === expectedAnswer) {
+                feedback.textContent = "Correct HTML!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = `Incorrect. The expected answer is: ${expectedAnswer}`;
+                feedback.style.color = "red";
+            }
+        }
+
+        // CSS Evaluation
+        function evaluateCSS(questionNumber, expectedStyle) {
+            const userCSS = document.getElementById(`cssAnswer${questionNumber}`).value.trim();
+            const testElement = document.createElement('div');
+            document.body.appendChild(testElement);
+            testElement.style.cssText = userCSS;
+
+            const computedStyle = window.getComputedStyle(testElement);
+            const feedback = document.getElementById(`cssFeedback${questionNumber}`);
+
+            if (computedStyle.cssText.includes(expectedStyle)) {
+                feedback.textContent = "Correct CSS!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = `Incorrect. Try using: ${expectedStyle}`;
+                feedback.style.color = "red";
+            }
+
+            document.body.removeChild(testElement);
+        }
+
+        // JavaScript Evaluation
+        function evaluateJS(questionNumber, expectedResult) {
+            const userCode = document.getElementById(`jsAnswer${questionNumber}`).value.trim();
+            const feedback = document.getElementById(`jsFeedback${questionNumber}`);
+
+            try {
+                const result = eval(userCode);
+                if (result === expectedResult || userCode.includes(expectedResult)) {
+                    feedback.textContent = "Correct JavaScript!";
+                    feedback.style.color = "green";
+                } else {
+                    feedback.textContent = `Incorrect. The expected result is: ${expectedResult}`;
+                    feedback.style.color = "red";
+                }
+            } catch (error) {
+                feedback.textContent = `Error: ${error.message}`;
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
